@@ -29,26 +29,157 @@
     }
   }
   </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #F5F3EE; color: #2a2a2a; display: flex; align-items: center; justify-content: center; min-height: 100vh; padding: 2rem; }
-    .container { max-width: 480px; text-align: center; }
-    .mark { margin-bottom: 2rem; }
-    .mark img { max-width: 320px; width: 100%; height: auto; }
-    p { font-size: 1rem; line-height: 1.6; margin-bottom: 1.5rem; color: #555; }
-    .links { display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap; }
-    .links a { color: #2a2a2a; text-decoration: none; font-size: 0.9rem; border-bottom: 1px solid #ccc; }
-    .links a:hover { border-color: #2a2a2a; }
+
+    body {
+      font-family: 'Rubik', -apple-system, sans-serif;
+      background: #2c2418;
+      color: #eae7e0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 3rem 2rem;
+    }
+
+    .page {
+      max-width: 560px;
+      width: 100%;
+    }
+
+    .mark {
+      margin-bottom: 3rem;
+    }
+
+    .mark img {
+      max-width: 400px;
+      width: 100%;
+      height: auto;
+      filter: invert(1);
+    }
+
+    .tagline {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.8rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #8a8279;
+      margin-bottom: 2rem;
+    }
+
+    .description {
+      font-size: 1.05rem;
+      line-height: 1.6;
+      color: #b5aea4;
+      margin-bottom: 1rem;
+      max-width: 44ch;
+    }
+
+    .types {
+      list-style: none;
+      margin: 2rem 0;
+      padding: 0;
+      border-top: 1px solid #5c5347;
+      border-bottom: 1px solid #5c5347;
+      padding: 1.5rem 0;
+    }
+
+    .types li {
+      font-size: 0.95rem;
+      color: #d5d0c8;
+      margin-bottom: 0.75rem;
+      padding-left: 1rem;
+      position: relative;
+    }
+
+    .types li:last-child { margin-bottom: 0; }
+
+    .types li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.55em;
+      width: 4px;
+      height: 4px;
+      background: #7a4e2d;
+      border-radius: 50%;
+    }
+
+    .types span {
+      color: #8a8279;
+      font-size: 0.85rem;
+    }
+
+    .host {
+      font-size: 0.9rem;
+      color: #8a8279;
+      margin-bottom: 2.5rem;
+    }
+
+    .host a {
+      color: #d5d0c8;
+      text-decoration: none;
+      border-bottom: 1px solid #5c5347;
+    }
+
+    .host a:hover { border-color: #d5d0c8; }
+
+    .status {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.75rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: #7a4e2d;
+      margin-bottom: 2rem;
+    }
+
+    .links {
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .links a {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.75rem;
+      letter-spacing: 0.04em;
+      color: #8a8279;
+      text-decoration: none;
+      border-bottom: 1px solid #5c5347;
+      padding-bottom: 2px;
+    }
+
+    .links a:hover {
+      color: #eae7e0;
+      border-color: #eae7e0;
+    }
+
+    @media (max-width: 480px) {
+      body { padding: 2rem 1.5rem; }
+      .mark img { max-width: 280px; }
+      .description { font-size: 1rem; }
+    }
   </style>
 </head>
 <body>
-  <div class="container">
+  <div class="page">
     <div class="mark">
       <img src="Asset 3@2x.png" alt="Journeyman Show">
     </div>
-    <p>Design, brand, and AI through the lens of a practitioner who works across all three. Brand walks, conversations, and cross-domain connections.</p>
-    <p>Hosted by <a href="https://petersalvato.com">Peter Salvato</a>.</p>
-    <p>Coming soon.</p>
+    <p class="tagline">Brand walks / Conversations / Connections</p>
+    <p class="description">Design, brand, and AI through the lens of a practitioner who works across all three.</p>
+    <ul class="types">
+      <li>Brand walks <span>. Pull up a brand. Read what's actually there.</span></li>
+      <li>Conversations <span>. Real talk with people who make things.</span></li>
+      <li>Connections <span>. Two different worlds, same structure underneath.</span></li>
+    </ul>
+    <p class="host">Hosted by <a href="https://petersalvato.com">Peter Salvato</a>.</p>
+    <p class="status">Coming soon</p>
     <div class="links">
       <a href="https://instagram.com/journeyman.show">Instagram</a>
       <a href="https://youtube.com/@JourneymanShow">YouTube</a>
