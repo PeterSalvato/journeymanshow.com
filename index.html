@@ -3,22 +3,22 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Journeyman Show</title>
+  <title>Journeyman</title>
   <meta name="description" content="Design, brand, and AI through the lens of a practitioner who works across all three. Brand walks, conversations, and cross-domain connections. Hosted by Peter Salvato.">
   <link rel="canonical" href="https://journeymanshow.com/">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://journeymanshow.com/">
-  <meta property="og:title" content="Journeyman Show">
+  <meta property="og:title" content="Journeyman">
   <meta property="og:description" content="Design, brand, and AI through the lens of a practitioner who works across all three. Hosted by Peter Salvato.">
-  <meta property="og:site_name" content="Journeyman Show">
+  <meta property="og:site_name" content="Journeyman">
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Journeyman Show">
+  <meta name="twitter:title" content="Journeyman">
   <meta name="twitter:description" content="Design, brand, and AI through the lens of a practitioner who works across all three. Hosted by Peter Salvato.">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    "name": "Journeyman Show",
+    "name": "Journeyman",
     "url": "https://journeymanshow.com",
     "description": "Design, brand, and AI through the lens of a practitioner who works across all three. Hosted by Peter Salvato.",
     "author": {
@@ -29,22 +29,34 @@
     }
   }
   </script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
   <style>
+    @font-face {
+      font-family: 'Calder Dark';
+      src: url('assets/fonts/Calder Dark.woff2') format('woff2');
+      font-weight: normal;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'Calder Dark Grit';
+      src: url('assets/fonts/Calder Dark Grit.woff2') format('woff2');
+      font-weight: normal;
+      font-style: normal;
+      font-display: swap;
+    }
+
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
       font-family: 'Rubik', -apple-system, sans-serif;
-      background: #2c2418;
+      background: #1c1a18;
       color: #eae7e0;
       min-height: 100vh;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      padding: 3rem 2rem;
+      padding: 4rem 2rem;
     }
 
     .page {
@@ -53,45 +65,66 @@
     }
 
     .mark {
-      margin-bottom: 3rem;
+      margin-bottom: 1.5rem;
+      text-align: center;
     }
 
     .mark img {
-      max-width: 400px;
+      max-width: 180px;
       width: 100%;
       height: auto;
       filter: invert(1);
     }
 
-    .tagline {
-      font-family: 'Space Mono', monospace;
-      font-size: 0.8rem;
-      letter-spacing: 0.08em;
+    .wordmark {
+      margin-bottom: 2.5rem;
+      text-align: center;
+    }
+
+    .wordmark img {
+      max-width: 420px;
+      width: 100%;
+      height: auto;
+      filter: invert(1);
+    }
+
+    .cats {
+      font-family: 'Calder Dark Grit', 'Calder Dark', monospace;
+      font-size: 0.75rem;
+      letter-spacing: 0.14em;
       text-transform: uppercase;
-      color: #8a8279;
-      margin-bottom: 2rem;
+      color: #6b6560;
+      margin-bottom: 1.5rem;
+      text-align: center;
     }
 
     .description {
       font-size: 1.05rem;
       line-height: 1.6;
-      color: #b5aea4;
-      margin-bottom: 1rem;
+      color: #b5aea6;
+      margin-bottom: 2rem;
+      text-align: center;
       max-width: 44ch;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .rule {
+      border: none;
+      border-top: 1px solid #44403a;
+      margin: 0 auto 2rem;
+      width: 70%;
     }
 
     .types {
       list-style: none;
-      margin: 2rem 0;
+      margin: 0 0 2.5rem 0;
       padding: 0;
-      border-top: 1px solid #5c5347;
-      border-bottom: 1px solid #5c5347;
-      padding: 1.5rem 0;
     }
 
     .types li {
       font-size: 0.95rem;
-      color: #d5d0c8;
+      color: #b5aea6;
       margin-bottom: 0.75rem;
       padding-left: 1rem;
       position: relative;
@@ -106,51 +139,59 @@
       top: 0.55em;
       width: 4px;
       height: 4px;
-      background: #7a4e2d;
+      background: #cb6d2d;
       border-radius: 50%;
     }
 
+    .types strong {
+      color: #eae7e0;
+      font-weight: 500;
+    }
+
     .types span {
-      color: #8a8279;
+      color: #6b6560;
       font-size: 0.85rem;
     }
 
     .host {
       font-size: 0.9rem;
-      color: #8a8279;
+      color: #6b6560;
       margin-bottom: 2.5rem;
+      text-align: center;
     }
 
     .host a {
-      color: #d5d0c8;
+      color: #b5aea6;
       text-decoration: none;
-      border-bottom: 1px solid #5c5347;
+      border-bottom: 1px solid #44403a;
     }
 
-    .host a:hover { border-color: #d5d0c8; }
+    .host a:hover { border-color: #b5aea6; }
 
     .status {
-      font-family: 'Space Mono', monospace;
-      font-size: 0.75rem;
-      letter-spacing: 0.06em;
+      font-family: 'Calder Dark Grit', 'Calder Dark', monospace;
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
       text-transform: uppercase;
-      color: #7a4e2d;
+      color: #cb6d2d;
       margin-bottom: 2rem;
+      text-align: center;
     }
 
     .links {
       display: flex;
       gap: 1.5rem;
       flex-wrap: wrap;
+      justify-content: center;
     }
 
     .links a {
-      font-family: 'Space Mono', monospace;
-      font-size: 0.75rem;
-      letter-spacing: 0.04em;
-      color: #8a8279;
+      font-family: 'Calder Dark Grit', 'Calder Dark', monospace;
+      font-size: 0.7rem;
+      letter-spacing: 0.06em;
+      color: #6b6560;
       text-decoration: none;
-      border-bottom: 1px solid #5c5347;
+      border-bottom: 1px solid #44403a;
       padding-bottom: 2px;
     }
 
@@ -160,23 +201,31 @@
     }
 
     @media (max-width: 480px) {
-      body { padding: 2rem 1.5rem; }
-      .mark img { max-width: 280px; }
+      body { padding: 3rem 1.5rem; }
+      .mark img { max-width: 140px; }
+      .wordmark img { max-width: 300px; }
       .description { font-size: 1rem; }
     }
   </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500&display=swap" rel="stylesheet">
 </head>
 <body>
   <div class="page">
     <div class="mark">
-      <img src="Asset 3@2x.png" alt="Journeyman Show">
+      <img src="mark@2x.png" alt="Journeyman mark">
     </div>
-    <p class="tagline">Brand walks / Conversations / Connections</p>
+    <div class="wordmark">
+      <img src="wordmark@2x.png" alt="Journeyman">
+    </div>
+    <p class="cats">Brand Walks / Conversations / Connections</p>
     <p class="description">Design, brand, and AI through the lens of a practitioner who works across all three.</p>
+    <hr class="rule">
     <ul class="types">
-      <li>Brand walks <span>. Pull up a brand. Read what's actually there.</span></li>
-      <li>Conversations <span>. Real talk with people who make things.</span></li>
-      <li>Connections <span>. Two different worlds, same structure underneath.</span></li>
+      <li><strong>Brand walks</strong> <span>. Pull up a brand. Read what's actually there.</span></li>
+      <li><strong>Conversations</strong> <span>. Real talk with people who make things.</span></li>
+      <li><strong>Connections</strong> <span>. Two different worlds, same structure underneath.</span></li>
     </ul>
     <p class="host">Hosted by <a href="https://petersalvato.com">Peter Salvato</a>.</p>
     <p class="status">Coming soon</p>
