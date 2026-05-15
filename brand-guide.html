@@ -1,0 +1,1241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Journeyman — Brand Style Guide</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Rubik:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  @font-face {
+    font-family: 'Calder Dark';
+    src: url('assets/fonts/Calder Dark.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'Calder Dark Grit';
+    src: url('assets/fonts/Calder Dark Grit.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'Calder LC';
+    src: url('assets/fonts/Calder LC.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+</style>
+<style>
+  :root {
+    --deep-iron: #1c1a18;
+    --steel: #2d2a27;
+    --concrete: #44403a;
+    --warm-gray: #6b6560;
+    --light-gray: #b5aea6;
+    --cream: #eae7e0;
+    --torch-blue: #3d8fb5;
+    --spark-orange: #cb6d2d;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--deep-iron);
+    color: var(--cream);
+    font-family: 'Rubik', sans-serif;
+    font-weight: 400;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Grain overlay */
+  body::before {
+    content: '';
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+    background-size: 256px;
+    pointer-events: none;
+    z-index: 9999;
+  }
+
+  .guide {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 40px;
+  }
+
+  /* Header */
+  .guide-header {
+    padding: 80px 0 60px;
+    border-bottom: 2px solid var(--concrete);
+  }
+
+  .guide-header-label {
+    font-family: 'Calder Dark Grit', 'Calder Dark', monospace;
+    font-size: 12px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--warm-gray);
+    margin-bottom: 24px;
+  }
+
+  .guide-header h1 {
+    font-family: 'Calder Dark', 'Space Mono', monospace;
+    font-weight: normal;
+    font-size: 48px;
+    letter-spacing: 0.02em;
+    line-height: 1.1;
+    color: var(--cream);
+    margin-bottom: 16px;
+  }
+
+  .guide-header h1 span {
+    color: var(--warm-gray);
+    font-weight: 300;
+  }
+
+  .guide-header-meta {
+    font-family: 'Calder Dark Grit', 'Calder Dark', monospace;
+    font-size: 12px;
+    color: var(--warm-gray);
+    letter-spacing: 0.05em;
+  }
+
+  .guide-header-meta .status {
+    color: var(--spark-orange);
+  }
+
+  /* Section */
+  .section {
+    padding: 64px 0;
+    border-bottom: 1px solid var(--concrete);
+  }
+
+  .section:last-child {
+    border-bottom: none;
+  }
+
+  .section-number {
+    font-family: 'Calder Dark Grit', 'Calder Dark', monospace;
+    font-size: 12px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--torch-blue);
+    margin-bottom: 8px;
+  }
+
+  .section-title {
+    font-family: 'Calder Dark Grit', 'Calder Dark', monospace;
+    font-size: 15px;
+    font-weight: normal;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--light-gray);
+    margin-bottom: 40px;
+  }
+
+  .section-desc {
+    font-size: 15px;
+    color: var(--light-gray);
+    max-width: 60ch;
+    margin-bottom: 40px;
+    line-height: 1.7;
+  }
+
+  /* Identity */
+  .identity-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: start;
+  }
+
+  .identity-mark {
+    background: var(--steel);
+    padding: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .identity-mark img {
+    max-width: 320px;
+    width: 100%;
+    filter: invert(1);
+  }
+
+  .identity-details dt {
+    font-family: 'Calder Dark Grit', 'Calder Dark', monospace;
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--warm-gray);
+    margin-bottom: 4px;
+    margin-top: 24px;
+  }
+
+  .identity-details dt:first-child {
+    margin-top: 0;
+  }
+
+  .identity-details dd {
+    font-size: 15px;
+    color: var(--cream);
+    line-height: 1.5;
+  }
+
+  /* Palette */
+  .palette-section {
+    margin-bottom: 48px;
+  }
+
+  .palette-label {
+    font-family: 'Calder Dark Grit', 'Calder Dark', monospace;
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--warm-gray);
+    margin-bottom: 16px;
+  }
+
+  .palette-row {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 2px;
+  }
+
+  .palette-row.accent {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 366px;
+  }
+
+  .swatch {
+    aspect-ratio: 1;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 12px;
+    transition: transform 0.15s ease;
+  }
+
+  .swatch:hover {
+    transform: scale(1.02);
+    z-index: 1;
+  }
+
+  .swatch-name {
+    font-family: 'Calder Dark Grit', 'Calder Dark', monospace;
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 2px;
+  }
+
+  .swatch-hex {
+    font-family: 'Calder Dark Grit', 'Calder Dark', monospace;
+    font-size: 10px;
+    opacity: 0.7;
+  }
+
+  .swatch.light-text .swatch-name,
+  .swatch.light-text .swatch-hex { color: var(--cream); }
+
+  .swatch.dark-text .swatch-name,
+  .swatch.dark-text .swatch-hex { color: var(--deep-iron); }
+
+  .swatch-tbd {
+    border: 1px dashed var(--concrete);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .swatch-tbd span {
+    font-family: 'Calder Dark', 'Space Mono', monospace;
+    font-size: 10px;
+    color: var(--warm-gray);
+    letter-spacing: 0.1em;
+  }
+
+  /* Typography */
+  .type-specimen {
+    margin-bottom: 40px;
+    padding: 32px;
+    background: var(--steel);
+  }
+
+  .type-specimen-label {
+    font-family: 'Calder Dark Grit', 'Calder Dark', monospace;
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--warm-gray);
+    margin-bottom: 16px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .type-specimen-sample {
+    margin-bottom: 8px;
+  }
+
+  .type-specimen-sample.display {
+    font-family: 'Calder Dark', 'Space Mono', monospace;
+    font-size: 36px;
+    font-weight: normal;
+    letter-spacing: 0.02em;
+    color: var(--cream);
+    line-height: 1.2;
+  }
+
+  .type-specimen-sample.labels {
+    font-family: 'Calder Dark', 'Space Mono', monospace;
+    font-size: 13px;
+    font-weight: 400;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--light-gray);
+    line-height: 1.8;
+  }
+
+  .type-specimen-sample.body {
+    font-family: 'Rubik', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--light-gray);
+    line-height: 1.7;
+    max-width: 52ch;
+  }
+
+  .type-specimen-note {
+    font-family: 'Calder Dark Grit', 'Calder Dark', monospace;
+    font-size: 11px;
+    color: var(--warm-gray);
+    margin-top: 12px;
+  }
+
+  /* Graphics Package */
+  .graphics-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+
+  .graphic-frame {
+    background: var(--steel);
+    overflow: hidden;
+  }
+
+  .graphic-frame-preview {
+    aspect-ratio: 16/9;
+    background: var(--deep-iron);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    border-bottom: 1px solid var(--concrete);
+  }
+
+  .graphic-frame-preview .frame-label {
+    font-family: 'Calder Dark', 'Space Mono', monospace;
+    font-size: 11px;
+    color: var(--warm-gray);
+    letter-spacing: 0.08em;
+  }
+
+  /* Title card preview */
+  .preview-title-card {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .preview-title-card .ep-number {
+    font-family: 'Calder Dark', 'Space Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--torch-blue);
+  }
+
+  .preview-title-card .ep-title {
+    font-family: 'Calder Dark', 'Space Mono', monospace;
+    font-size: 18px;
+    font-weight: normal;
+    color: var(--cream);
+    letter-spacing: 0.03em;
+  }
+
+  .preview-title-card .ep-subtitle {
+    font-family: 'Rubik', sans-serif;
+    font-size: 11px;
+    color: var(--warm-gray);
+    font-weight: 400;
+  }
+
+  /* Lower third preview */
+  .preview-lower-third {
+    align-items: flex-end;
+    justify-content: flex-start;
+    padding: 16px;
+  }
+
+  .lower-third-bar {
+    background: rgba(26, 26, 30, 0.85);
+    padding: 8px 16px;
+    border-left: 3px solid var(--spark-orange);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .lower-third-bar span {
+    font-family: 'Calder Dark', 'Space Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    color: var(--cream);
+  }
+
+  .lower-third-bar .separator {
+    color: var(--concrete);
+  }
+
+  /* End card preview */
+  .preview-end-card {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .preview-end-card .end-links {
+    display: flex;
+    gap: 20px;
+  }
+
+  .preview-end-card .end-links span {
+    font-family: 'Calder Dark', 'Space Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--warm-gray);
+  }
+
+  .preview-end-card .end-url {
+    font-family: 'Calder Dark', 'Space Mono', monospace;
+    font-size: 10px;
+    color: var(--concrete);
+  }
+
+  /* Wallpaper preview */
+  .preview-wallpaper {
+    background: var(--steel);
+    position: relative;
+  }
+
+  .preview-wallpaper .screenshot-placeholder {
+    width: 60%;
+    aspect-ratio: 16/10;
+    background: var(--concrete);
+    border: 1px solid var(--warm-gray);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .preview-wallpaper .screenshot-placeholder span {
+    font-family: 'Calder Dark', 'Space Mono', monospace;
+    font-size: 9px;
+    color: var(--warm-gray);
+    letter-spacing: 0.1em;
+  }
+
+  .graphic-frame-info {
+    padding: 16px 20px;
+  }
+
+  .graphic-frame-name {
+    font-family: 'Calder Dark Grit', 'Calder Dark', monospace;
+    font-size: 12px;
+    font-weight: normal;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--cream);
+    margin-bottom: 4px;
+  }
+
+  .graphic-frame-dims {
+    font-family: 'Calder Dark Grit', 'Calder Dark', monospace;
+    font-size: 11px;
+    color: var(--warm-gray);
+    margin-bottom: 10px;
+  }
+
+  .graphic-frame-specs {
+    list-style: none;
+  }
+
+  .graphic-frame-specs li {
+    font-size: 12px;
+    color: var(--light-gray);
+    line-height: 1.8;
+    padding-left: 12px;
+    position: relative;
+  }
+
+  .graphic-frame-specs li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.7em;
+    width: 4px;
+    height: 4px;
+    background: var(--spark-orange);
+    border-radius: 50%;
+  }
+
+  /* Rules */
+  .rules-list {
+    list-style: none;
+    counter-reset: rule;
+  }
+
+  .rules-list li {
+    counter-increment: rule;
+    font-size: 15px;
+    color: var(--light-gray);
+    line-height: 1.7;
+    padding: 16px 0;
+    padding-left: 48px;
+    border-bottom: 1px solid var(--steel);
+    position: relative;
+  }
+
+  .rules-list li::before {
+    content: counter(rule, decimal-leading-zero);
+    font-family: 'Calder Dark', 'Space Mono', monospace;
+    font-size: 11px;
+    color: var(--concrete);
+    position: absolute;
+    left: 0;
+    top: 18px;
+    letter-spacing: 0.05em;
+  }
+
+  /* Video specs */
+  .specs-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  .specs-table tr {
+    border-bottom: 1px solid var(--steel);
+  }
+
+  .specs-table td {
+    padding: 12px 0;
+    font-size: 14px;
+  }
+
+  .specs-table td:first-child {
+    font-family: 'Calder Dark Grit', 'Calder Dark', monospace;
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--warm-gray);
+    width: 200px;
+  }
+
+  .specs-table td:last-child {
+    color: var(--cream);
+  }
+
+  /* Relationships */
+  .brand-relationships {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+  }
+
+  .brand-rel {
+    background: var(--steel);
+    padding: 24px;
+  }
+
+  .brand-rel-name {
+    font-family: 'Calder Dark Grit', 'Calder Dark', monospace;
+    font-size: 12px;
+    font-weight: normal;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--cream);
+    margin-bottom: 8px;
+  }
+
+  .brand-rel-desc {
+    font-size: 13px;
+    color: var(--warm-gray);
+    line-height: 1.6;
+  }
+
+  /* Open items */
+  .open-items {
+    list-style: none;
+  }
+
+  .open-items li {
+    font-family: 'Calder Dark Grit', 'Calder Dark', monospace;
+    font-size: 12px;
+    color: var(--warm-gray);
+    padding: 8px 0;
+    padding-left: 24px;
+    position: relative;
+    border-bottom: 1px solid var(--steel);
+  }
+
+  .open-items li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 12px;
+    width: 10px;
+    height: 10px;
+    border: 1px solid var(--spark-orange);
+  }
+
+  /* Footer */
+  .guide-footer {
+    padding: 40px 0;
+    text-align: center;
+  }
+
+  .guide-footer p {
+    font-family: 'Calder Dark Grit', 'Calder Dark', monospace;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    color: var(--concrete);
+    text-transform: uppercase;
+  }
+
+  /* Lockup Variants */
+  .lockups-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-bottom: 40px;
+  }
+
+  .lockup-frame {
+    background: var(--steel);
+    overflow: hidden;
+  }
+
+  .lockup-preview {
+    aspect-ratio: 16/9;
+    background: var(--deep-iron);
+    display: flex;
+    position: relative;
+    border-bottom: 1px solid var(--concrete);
+  }
+
+  .lockup-info {
+    padding: 16px 20px;
+  }
+
+  .lockup-name {
+    font-family: 'Calder Dark Grit', 'Calder Dark', monospace;
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--cream);
+    margin-bottom: 4px;
+  }
+
+  .lockup-use {
+    font-size: 12px;
+    color: var(--warm-gray);
+    line-height: 1.6;
+  }
+
+  /* A: Hero / Landing */
+  .lockup-hero {
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 28px 16px;
+  }
+
+  .lockup-hero .lockup-mark {
+    width: 100px;
+    filter: invert(1);
+    margin-bottom: 4px;
+  }
+
+  .lockup-hero .lockup-wordmark {
+    font-family: 'Calder Dark', monospace;
+    font-size: 28px;
+    color: var(--cream);
+    letter-spacing: 0.03em;
+    margin-bottom: 10px;
+  }
+
+  .lockup-hero .lockup-cats {
+    font-family: 'Calder Dark Grit', 'Calder Dark', monospace;
+    font-size: 7px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--warm-gray);
+    margin-bottom: 8px;
+  }
+
+  .lockup-hero .lockup-desc {
+    font-family: 'Rubik', sans-serif;
+    font-size: 10px;
+    color: var(--light-gray);
+    line-height: 1.5;
+    text-align: center;
+    max-width: 34ch;
+    margin-bottom: 10px;
+  }
+
+  .lockup-hero .lockup-rule {
+    width: 60%;
+    border: none;
+    border-top: 1px solid var(--concrete);
+    margin-bottom: 10px;
+  }
+
+  .lockup-hero .lockup-types {
+    list-style: none;
+    width: 60%;
+  }
+
+  .lockup-hero .lockup-types li {
+    font-family: 'Rubik', sans-serif;
+    font-size: 9px;
+    color: var(--light-gray);
+    margin-bottom: 4px;
+    padding-left: 10px;
+    position: relative;
+  }
+
+  .lockup-hero .lockup-types li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.5em;
+    width: 3px;
+    height: 3px;
+    background: var(--spark-orange);
+    border-radius: 50%;
+  }
+
+  .lockup-hero .lockup-types li strong {
+    font-weight: 500;
+    color: var(--cream);
+  }
+
+  /* B: Title Card */
+  .lockup-titlecard {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+  }
+
+  .lockup-titlecard .lockup-mark {
+    width: 70px;
+    filter: invert(1);
+  }
+
+  .lockup-titlecard .lockup-wordmark {
+    font-family: 'Calder Dark', monospace;
+    font-size: 14px;
+    color: var(--cream);
+    letter-spacing: 0.04em;
+  }
+
+  .lockup-titlecard .lockup-url {
+    font-family: 'Calder Dark Grit', 'Calder Dark', monospace;
+    font-size: 6px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--warm-gray);
+    margin-top: 2px;
+  }
+
+  /* C: Lower Third */
+  .lockup-lowerthird {
+    align-items: flex-end;
+    justify-content: stretch;
+    padding: 0;
+  }
+
+  .lockup-lowerthird-inner {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    background: rgba(26, 26, 24, 0.75);
+    border-top: 1px solid var(--concrete);
+    padding: 6px 16px;
+    gap: 10px;
+  }
+
+  .lockup-lowerthird-inner .lockup-mark {
+    width: 40px;
+    filter: invert(1);
+    opacity: 0.7;
+  }
+
+  .lockup-lowerthird-inner .lockup-text {
+    font-family: 'Calder Dark', monospace;
+    font-size: 12px;
+    color: var(--cream);
+    letter-spacing: 0.06em;
+  }
+
+  .lockup-lowerthird-inner .lockup-text .separator {
+    color: var(--concrete);
+    margin: 0 4px;
+  }
+
+  /* Fake video bg for lower third */
+  .lockup-lowerthird-bg {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: linear-gradient(145deg, var(--concrete) 0%, var(--steel) 50%, var(--concrete) 100%);
+    opacity: 0.5;
+  }
+
+  /* D: Navigation Bar */
+  .lockup-navbar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .lockup-navbar-bar {
+    width: 100%;
+    padding: 8px 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border-bottom: 1px solid var(--concrete);
+  }
+
+  .lockup-navbar-bar .lockup-mark {
+    width: 28px;
+    filter: invert(1);
+  }
+
+  .lockup-navbar-bar .lockup-wordmark {
+    font-family: 'Calder Dark', monospace;
+    font-size: 11px;
+    color: var(--cream);
+    letter-spacing: 0.05em;
+  }
+
+  .lockup-navbar-bar .lockup-links {
+    margin-left: auto;
+    display: flex;
+    gap: 14px;
+  }
+
+  .lockup-navbar-bar .lockup-links span {
+    font-family: 'Calder Dark Grit', 'Calder Dark', monospace;
+    font-size: 7px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--warm-gray);
+  }
+
+  .lockup-navbar-content {
+    flex: 1;
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .guide { padding: 0 24px; }
+    .guide-header h1 { font-size: 32px; }
+    .identity-grid { grid-template-columns: 1fr; }
+    .palette-row { grid-template-columns: repeat(3, 1fr); }
+    .graphics-grid { grid-template-columns: 1fr; }
+    .brand-relationships { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<div class="guide">
+
+  <!-- Header -->
+  <header class="guide-header">
+    <div class="guide-header-label">Brand Style Guide</div>
+    <h1>Journeyman <span>/ Visual Identity</span></h1>
+    <div class="guide-header-meta">
+      <span class="status">Working Draft</span> / Evolving as the show takes shape
+    </div>
+  </header>
+
+  <!-- 01 Identity -->
+  <section class="section">
+    <div class="section-number">01</div>
+    <div class="section-title">Identity</div>
+    <div class="identity-grid">
+      <div class="identity-mark">
+        <img src="Asset 3@2x.png" alt="Journeyman mark">
+      </div>
+      <dl class="identity-details">
+        <dt>Name</dt>
+        <dd>Journeyman</dd>
+        <dt>Not</dt>
+        <dd>"Journeyman Show"</dd>
+        <dt>Mark</dt>
+        <dd>Weld bead pattern (lagged ladder weave) + wordmark</dd>
+        <dt>Concept</dt>
+        <dd>A fully capable, traveling expert. Cross-domain practice. The skill transfers, the rooms change.</dd>
+        <dt>Origin</dt>
+        <dd>A journeyman is someone who has completed their apprenticeship and travels to practice their craft in different places. The weld bead is the visual: joining different materials, different contexts, same skill.</dd>
+      </dl>
+    </div>
+  </section>
+
+  <!-- 01b Lockup Variants -->
+  <section class="section">
+    <div class="section-number">01b</div>
+    <div class="section-title">Lockup Variants</div>
+    <div class="section-desc">Four configurations of the mark and wordmark for different contexts. Each serves a different frame type.</div>
+
+    <div class="lockups-grid">
+
+      <!-- A: Hero / Landing -->
+      <div class="lockup-frame">
+        <div class="lockup-preview lockup-hero">
+          <img class="lockup-mark" src="Asset 3@2x.png" alt="Journeyman mark">
+          <span class="lockup-wordmark">JOURNEYMAN</span>
+          <span class="lockup-cats">Brand Walks / Conversations / Connections</span>
+          <span class="lockup-desc">Design, brand, and AI through the lens of a practitioner who works across all three.</span>
+          <hr class="lockup-rule">
+          <ul class="lockup-types">
+            <li><strong>Brand walks</strong> . Pull up a brand. Read what's actually there.</li>
+            <li><strong>Conversations</strong> . Real talk with people who make things.</li>
+            <li><strong>Connections</strong> . Two different worlds, same structure underneath.</li>
+          </ul>
+        </div>
+        <div class="lockup-info">
+          <div class="lockup-name">Hero / Landing</div>
+          <div class="lockup-use">Homepage, landing page. Centered mark, large wordmark, category bar, description, episode types below a rule.</div>
+        </div>
+      </div>
+
+      <!-- B: Title Card -->
+      <div class="lockup-frame">
+        <div class="lockup-preview lockup-titlecard">
+          <img class="lockup-mark" src="Asset 3@2x.png" alt="Journeyman mark">
+          <span class="lockup-wordmark">JOURNEYMAN</span>
+          <span class="lockup-url">journeymanshow.com</span>
+        </div>
+        <div class="lockup-info">
+          <div class="lockup-name">Title Card</div>
+          <div class="lockup-use">Episode open, bumper. Centered mark, wordmark, URL. Minimal. Hard cut in, hard cut out.</div>
+        </div>
+      </div>
+
+      <!-- C: Lower Third -->
+      <div class="lockup-frame">
+        <div class="lockup-preview lockup-lowerthird">
+          <div class="lockup-lowerthird-bg"></div>
+          <div class="lockup-lowerthird-inner">
+            <img class="lockup-mark" src="Asset 3@2x.png" alt="Journeyman mark">
+            <span class="lockup-text">PETER <span class="separator">//</span> JOURNEYMAN</span>
+          </div>
+        </div>
+        <div class="lockup-info">
+          <div class="lockup-name">Lower Third</div>
+          <div class="lockup-use">On camera overlay. Full-width bar at bottom edge. Mark small at left, name and show inline. Semi-transparent background, border top.</div>
+        </div>
+      </div>
+
+      <!-- D: Navigation Bar -->
+      <div class="lockup-frame">
+        <div class="lockup-preview lockup-navbar">
+          <div class="lockup-navbar-bar">
+            <img class="lockup-mark" src="Asset 3@2x.png" alt="Journeyman mark">
+            <span class="lockup-wordmark">JOURNEYMAN</span>
+            <div class="lockup-links">
+              <span>Home</span>
+              <span>Episodes</span>
+              <span>Contact</span>
+              <span>About</span>
+            </div>
+          </div>
+          <div class="lockup-navbar-content"></div>
+        </div>
+        <div class="lockup-info">
+          <div class="lockup-name">Navigation Bar</div>
+          <div class="lockup-use">Site header. Small mark left, wordmark inline, nav links right-aligned. Content area below.</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 02 Palette -->
+  <section class="section">
+    <div class="section-number">02</div>
+    <div class="section-title">Palette</div>
+    <div class="section-desc">Steel, iron, and concrete form the foundation. Torch blue and spark orange are used sparingly for annotations, highlights, and accents. The grays carry the frames. The accents punctuate.</div>
+
+    <div class="palette-section">
+      <div class="palette-label">Foundation / Steel, Iron, Concrete</div>
+      <div class="palette-row">
+        <div class="swatch light-text" style="background: #1c1a18;">
+          <span class="swatch-name">Deep Iron</span>
+          <span class="swatch-hex">#1c1a18</span>
+        </div>
+        <div class="swatch light-text" style="background: #2d2a27;">
+          <span class="swatch-name">Steel</span>
+          <span class="swatch-hex">#2d2a27</span>
+        </div>
+        <div class="swatch light-text" style="background: #44403a;">
+          <span class="swatch-name">Concrete</span>
+          <span class="swatch-hex">#44403a</span>
+        </div>
+        <div class="swatch light-text" style="background: #6b6560;">
+          <span class="swatch-name">Warm Gray</span>
+          <span class="swatch-hex">#6b6560</span>
+        </div>
+        <div class="swatch dark-text" style="background: #b5aea6;">
+          <span class="swatch-name">Light Gray</span>
+          <span class="swatch-hex">#b5aea6</span>
+        </div>
+        <div class="swatch dark-text" style="background: #eae7e0;">
+          <span class="swatch-name">Cream</span>
+          <span class="swatch-hex">#eae7e0</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="palette-section">
+      <div class="palette-label">Accent / Torch</div>
+      <div class="palette-row accent">
+        <div class="swatch light-text" style="background: #3d8fb5;">
+          <span class="swatch-name">Torch Blue</span>
+          <span class="swatch-hex">#3d8fb5</span>
+        </div>
+        <div class="swatch light-text" style="background: #cb6d2d;">
+          <span class="swatch-name">Spark Orange</span>
+          <span class="swatch-hex">#cb6d2d</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 03 Typography -->
+  <section class="section">
+    <div class="section-number">03</div>
+    <div class="section-title">Typography</div>
+
+    <div class="type-specimen">
+      <div class="type-specimen-label">
+        <span>Display / Headlines</span>
+        <span>Chainprinter</span>
+      </div>
+      <div class="type-specimen-sample display">Milwaukee Tool</div>
+      <div class="type-specimen-sample display" style="font-size: 24px; color: var(--light-gray);">Visual Discipline, Zero Narrative</div>
+      <div class="type-specimen-note">Episode titles, title cards. Mixed case.</div>
+    </div>
+
+    <div class="type-specimen">
+      <div class="type-specimen-label">
+        <span>Labels / Metadata</span>
+        <span>Space Mono 400/700</span>
+      </div>
+      <div class="type-specimen-sample labels">EP 01 / BRAND WALK / 24:30</div>
+      <div class="type-specimen-sample labels">PETER // JOURNEYMAN</div>
+      <div class="type-specimen-sample labels">JOURNEYMANSHOW.COM</div>
+      <div class="type-specimen-note">Lower thirds, timestamps, categories, URLs. All caps.</div>
+    </div>
+
+    <div class="type-specimen">
+      <div class="type-specimen-label">
+        <span>Body</span>
+        <span>Rubik 400/500</span>
+      </div>
+      <div class="type-specimen-sample body">Milwaukee has visual coherence and zero narrative coherence. Everything looks like Milwaukee. Nothing sounds like anyone in particular. The colors hold. The brand voice is absent.</div>
+      <div class="type-specimen-note">Description text, episode info. Mixed case. 15-16px on screen.</div>
+    </div>
+  </section>
+
+  <!-- 04 Graphics Package -->
+  <section class="section">
+    <div class="section-number">04</div>
+    <div class="section-title">Graphics Package</div>
+    <div class="section-desc">Four elements form the on-screen system. All frames use hard cuts. No fades, no dissolves.</div>
+
+    <div class="graphics-grid">
+
+      <div class="graphic-frame">
+        <div class="graphic-frame-preview preview-title-card">
+          <span class="ep-number">EP 01 / Brand Walk</span>
+          <span class="ep-title">Milwaukee Tool</span>
+          <span class="ep-subtitle">Visual Discipline, Zero Narrative</span>
+        </div>
+        <div class="graphic-frame-info">
+          <div class="graphic-frame-name">Title Card</div>
+          <div class="graphic-frame-dims">1920 x 1080</div>
+          <ul class="graphic-frame-specs">
+            <li>Deep Iron background</li>
+            <li>Episode title in display type</li>
+            <li>Episode number and category as label</li>
+            <li>Hard cut in, hard cut out</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="graphic-frame">
+        <div class="graphic-frame-preview preview-lower-third">
+          <div class="lower-third-bar">
+            <span>PETER</span>
+            <span class="separator">//</span>
+            <span>JOURNEYMAN</span>
+          </div>
+        </div>
+        <div class="graphic-frame-info">
+          <div class="graphic-frame-name">Lower Third</div>
+          <div class="graphic-frame-dims">1920 x 1080 / Transparent PNG</div>
+          <ul class="graphic-frame-specs">
+            <li>Bottom-left position</li>
+            <li>Dark bar with slight transparency</li>
+            <li>Accent color on left edge</li>
+            <li>5-10 seconds, hard cut in/out</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="graphic-frame">
+        <div class="graphic-frame-preview preview-end-card">
+          <span class="frame-label" style="font-size: 13px; color: var(--cream); letter-spacing: 0.08em;">JOURNEYMAN</span>
+          <div class="end-links">
+            <span>YouTube</span>
+            <span>Instagram</span>
+            <span>RSS</span>
+          </div>
+          <span class="end-url">journeymanshow.com</span>
+        </div>
+        <div class="graphic-frame-info">
+          <div class="graphic-frame-name">End Card</div>
+          <div class="graphic-frame-dims">1920 x 1080</div>
+          <ul class="graphic-frame-specs">
+            <li>Deep Iron background</li>
+            <li>Mark small, centered or top-left</li>
+            <li>Subscribe links in label type</li>
+            <li>Hard cut in</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="graphic-frame">
+        <div class="graphic-frame-preview preview-wallpaper">
+          <div class="screenshot-placeholder">
+            <span>Screenshot</span>
+          </div>
+        </div>
+        <div class="graphic-frame-info">
+          <div class="graphic-frame-name">Wallpaper</div>
+          <div class="graphic-frame-dims">1920 x 1080</div>
+          <ul class="graphic-frame-specs">
+            <li>Steel or Concrete background</li>
+            <li>Subtle noise/grain texture</li>
+            <li>Mat board behind screenshots</li>
+            <li>Mark does not appear here</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 05 On-Screen Rules -->
+  <section class="section">
+    <div class="section-number">05</div>
+    <div class="section-title">On-Screen Rules</div>
+    <ol class="rules-list">
+      <li>Hard cuts. No fades, no dissolves.</li>
+      <li>Screenshots sit on the wallpaper, not floating on black.</li>
+      <li>Annotations use accent colors (torch blue / spark orange) on screenshots.</li>
+      <li>The mark appears on the title card, end card, and lower third. Not on wallpaper or content frames.</li>
+      <li>Text on screen uses Space Mono for labels, display face for titles.</li>
+      <li>No more than two type sizes on any single frame.</li>
+    </ol>
+  </section>
+
+  <!-- 06 Video Specs -->
+  <section class="section">
+    <div class="section-number">06</div>
+    <div class="section-title">Video Specs</div>
+    <table class="specs-table">
+      <tr><td>Resolution</td><td>1920 x 1080 (4K capture, deliver HD)</td></tr>
+      <tr><td>Frame Rate</td><td>24fps</td></tr>
+      <tr><td>Aspect Ratio</td><td>16:9</td></tr>
+      <tr><td>Color Space</td><td>Rec. 709</td></tr>
+      <tr><td>Transitions</td><td>Hard cut only</td></tr>
+      <tr><td>Audio</td><td>AAC stereo (video) / MP3 128kbps (podcast)</td></tr>
+    </table>
+  </section>
+
+  <!-- 07 Voice -->
+  <section class="section">
+    <div class="section-number">07</div>
+    <div class="section-title">Voice</div>
+    <div class="section-desc">Direct. Practitioner register. No performance, no hype, no "welcome back." Straight to the thing. Matches petersalvato.com and joineryschool.com in register.</div>
+  </section>
+
+  <!-- 08 Brand Relationships -->
+  <section class="section">
+    <div class="section-number">08</div>
+    <div class="section-title">Brand Relationships</div>
+    <div class="section-desc">Journeyman stands alone. It is not a sub-brand of anything. It links back to petersalvato.com through the host credit and nowhere else.</div>
+    <div class="brand-relationships">
+      <div class="brand-rel">
+        <div class="brand-rel-name">petersalvato.com</div>
+        <div class="brand-rel-desc">Host's personal site. "Hosted by Peter Salvato" links here.</div>
+      </div>
+      <div class="brand-rel">
+        <div class="brand-rel-name">Third Industries</div>
+        <div class="brand-rel-desc">Commerce backbone. Journeyman is not a 3I product.</div>
+      </div>
+      <div class="brand-rel">
+        <div class="brand-rel-name">Joinery</div>
+        <div class="brand-rel-desc">School. Separate brand. No cross-linking on show materials.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 09 Open Items -->
+  <section class="section">
+    <div class="section-number">09</div>
+    <div class="section-title">Open Items</div>
+    <ul class="open-items">
+      <li>Finalize torch blue hex value</li>
+      <li>Finalize spark orange hex value</li>
+      <li>Choose display typeface (Chainprinter? Something new?)</li>
+      <li>Design wallpaper texture (grain/noise on steel)</li>
+      <li>Motion graphics versions (after Blender + Ben)</li>
+      <li>Podcast artwork (3000 x 3000, square)</li>
+      <li>YouTube channel art and avatar</li>
+      <li>Thumbnail template system</li>
+    </ul>
+  </section>
+
+  <!-- Footer -->
+  <footer class="guide-footer">
+    <p>Journeyman / Brand Style Guide / Working Draft</p>
+  </footer>
+
+</div>
+
+</body>
+</html>
